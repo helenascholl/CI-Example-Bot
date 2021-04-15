@@ -26,7 +26,7 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
       - name: Start Docker container
-        uses: garygrossgarten/github-action-ssh@release
+        uses: garygrossgarten/github-action-ssh@v0.6.3
         with:
           command: |
             cd ${{ secrets.REMOTE_TARGET }}
