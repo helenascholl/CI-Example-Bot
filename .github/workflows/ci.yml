@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+      - name: Add Dicord token
+        run: |
+          cp template.env .env
+          sed -i 's/yourprodtoken/${{ secrets.DISCORD_TOKEN }}/g' .env
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
