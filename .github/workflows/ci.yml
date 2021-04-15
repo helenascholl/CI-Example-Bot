@@ -2,10 +2,11 @@ name: Deploy to remote server
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
   workflow_dispatch:
+    branches: [ main ]
 
 jobs:
   build:
