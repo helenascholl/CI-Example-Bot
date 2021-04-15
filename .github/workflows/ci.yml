@@ -24,10 +24,11 @@ jobs:
       - name: Start Docker container
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: cd ${{ secrets.REMOTE_TARGET }} && \
-                   ls -lah && \
-                   docker-compose down && \
-                   docker-compose up -d
+          command: |
+            cd ${{ secrets.REMOTE_TARGET }}
+            ls -lah
+            docker-compose down
+            docker-compose up -d
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           privateKey: ${{ secrets.SSH_PRIVATE_KEY}}
