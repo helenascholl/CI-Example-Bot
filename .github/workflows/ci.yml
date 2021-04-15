@@ -25,8 +25,9 @@ jobs:
         uses: garygrossgarten/github-action-ssh@release
         with:
           command: cd ${{ secrets.REMOTE_TARGET }} && \
-                     docker-compose down && \
-                     docker-compose up -d
+                   ls -lah && \
+                   docker-compose down && \
+                   docker-compose up -d
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           privateKey: ${{ secrets.SSH_PRIVATE_KEY}}
