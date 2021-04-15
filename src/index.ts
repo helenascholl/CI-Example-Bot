@@ -14,7 +14,10 @@ client.on('ready', () => {
 
 client.on('message', message => {
   console.log(message.content);
-  message.channel.send(message.content);
+
+  if (message.author.id !== client.user?.id) {
+    message.channel.send(message.content);
+  }
 });
 
 client.login(token).catch(console.error);
