@@ -26,8 +26,8 @@ jobs:
         with:
           command: |
             cd ${{ secrets.REMOTE_TARGET }}
-            ls -lah
             docker-compose down
+            docker-compose build
             docker-compose up -d
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
