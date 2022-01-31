@@ -35,4 +35,4 @@ jobs:
             docker-compose up -d
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
-          privateKey: ${{ secrets.SSH_PRIVATE_KEY}}
+          privateKey: ${{ secrets.SSH_PRIVATE_KEY }}
